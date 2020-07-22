@@ -1,3 +1,9 @@
+In this solution, a vpc with public and private subnets were first created to host the Fargate and ALB application.
+Subnets are created to host the NAT gateway required by the private subnet in order for resources hosted on the private subnet to access Internet. Access from subnet to Internet is required to pull the aws-ecs sample image from docker hub.
+However, resources hosted in the private subnet are inaccessible from anywhere else except from within the VPC.
+Subnets were created for two AZs in order to provision HA ALB.
+Fargate resources can be accessed through the created ALB from within the VPC. 
+
 
 # Welcome to your CDK Python project!
 
